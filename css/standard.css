@@ -1,0 +1,202 @@
+@charset "utf-8";
+/* Média fluide simple
+   Remarque : un média fluide exige que vous supprimiez les attributs de hauteur et de largeur du média du code HTML
+   http://www.alistapart.com/articles/fluid-images/ 
+*/
+img, object, embed, video {
+	max-width: 100%;
+}
+/* IE 6 ne prend pas en charge max-width ; la largeur par défaut est donc fixée à 100% */
+.ie6 img {
+	width:100%;
+}
+header{
+		border:solid thin #ccc;
+	background-color:white; min-height:60px;  margin:auto; padding:10px; text-align:right;
+
+}
+
+footer{
+	border:solid thin #ccc;
+	background-color:white; height:70px; 
+	margin:auto;
+	padding:10px; text-align:right;
+	margin-top:50px;
+	bottom:0px;
+	font-size:small;
+}
+
+#homemenu{
+	width:80%;
+	max-width:1000px;
+	margin:auto;
+	margin-top:10px;
+	padding-top:10px;
+	text-align:center;
+	display: flex;
+	border-radius:10px;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items: center;
+}
+#homemenu a{
+	color:#222;
+	background-color:rgba(255,255,255,0.8);
+	margin:5px;
+	text-decoration:none;
+}
+#homemenu a div{
+	height: 130px;
+	width: 130px;
+	text-align: center;
+	padding-top: 20px;
+	margin-left: 20px;
+	display: block;
+}
+#homemenu a img{
+	padding-bottom:10px;
+	height:80px;
+	width:80px;
+}
+
+
+
+#homemenu a:hover img{
+	transform: scale(1.05);
+	-ms-transform: scale(1.05);
+	-webkit-transform: scale(1.05);
+	-o-transform: scale(1.05);
+	-moz-transform: scale(1.05);
+}
+
+#homemenu a:hover{
+	font-weight: bold;
+	background-color: #EAA33D;
+}
+
+/*
+	Propriétés de grille fluide Dreamweaver
+	----------------------------------
+	dw-num-cols-mobile:		5;
+	dw-num-cols-tablet:		8;
+	dw-num-cols-desktop:	10;
+	dw-gutter-percentage:	25;
+	
+	Inspiré par "Responsive Web Design" par Ethan Marcotte 
+	http://www.alistapart.com/articles/responsive-web-design
+	
+	et le système Golden Grid par Joni Korpi
+	http://goldengridsystem.com/
+*/
+
+/* Disposition mobile : 480px et moins. */
+
+.gridContainer {
+	margin: auto;
+	max-width:1200px;
+	width: 80%;
+	padding-left: 1.82%;
+	padding-right: 1.82%;
+}
+#LayoutDiv1 {
+	clear: both;
+	/*float: left;*/
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+
+#content{
+	
+  min-height: 100vh;
+}
+
+#content #menu{
+	max-width:250px;
+	background-color:#818181;
+  min-height: 100vh;
+  display:block;
+  padding:10px;
+  color:white;
+line-height:30px;
+overflow-y:auto;
+position:absolute;
+}
+
+#content #menu a{
+color:white;
+text-decoration:none;
+font-size:12px;
+}
+
+#content #menu a:hover{
+text-decoration:underline;
+}
+
+#content #menu .item{
+	padding-bottom:10px;
+	padding-top:10px;
+	line-height:15px;
+}
+
+#iconesousmenu:hover{
+	cursor:pointer;
+}
+
+a img{
+	cursor:pointer;}
+/* Disposition tablette : 481px sur 768px. Hérite des styles de : Disposition mobile */
+
+@media only screen and (min-width: 481px) {
+.gridContainer {
+	width: 90.675%;
+	padding-left: 1.1625%;
+	padding-right: 1.1625%;
+}
+
+#homemenu a div{
+	height:130px;
+	width:130px;
+	text-align:center;
+	padding:10px;  margin:0px; 	padding-left: 1.1625%;
+	padding-right: 1.1625%;
+}
+
+
+#LayoutDiv1 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+}
+
+/* Disposition bureau : 769px à max. 1232px.  Hérite des styles de : Disposition mobile et disposition tablette */
+
+@media only screen and (min-width: 769px) {
+.gridContainer {
+	width: 88.2%;
+	max-width: 1232px;
+	padding-left: 0.9%;
+	padding-right: 0.9%;
+	margin: auto;
+	padding-top: 10px;
+}
+
+
+#homemenu {
+    justify-content: left;  }
+
+#homemenu a div{
+	height:130px; width:170px; text-align:center; 
+	padding-top:35px;  }
+
+
+#LayoutDiv1 {
+	clear: both;
+	float: left;
+	width: 100%;
+	display: block;
+}
+
